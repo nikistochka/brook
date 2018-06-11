@@ -5,9 +5,10 @@ ENV BROOK_VERSION="20180601"
 RUN apt-get update
 RUN apt-get install -y wget
 
-RUN wget "https://github.com/txthinking/brook/releases/download/v20180601/brook"
+RUN mkdir -p /usr/local/brook/bin 
+RUN cd /usr/local/brook/bin
+RUN wget -O brook "https://github.com/txthinking/brook/releases/download/v20180601/brook"
 
 RUN chmod +x brook
 
-ENV ARGS="socks5 -l :7777 --username user1 --password “FUCKYOURKN”"
-CMD brook ${ARGS}
+ENTRYPOINT ["/usr/local/brook/bin/brook"]
