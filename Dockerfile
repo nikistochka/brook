@@ -4,8 +4,8 @@ RUN apt-get update
 RUN apt-get install -y wget
 
 RUN mkdir -p /newfolder
-RUN chown newuser /newfolder
 USER newuser
+RUN chown newuser /newfolder
 RUN cd /newfolder
 
 RUN wget -O brook "https://github.com/txthinking/brook/releases/download/v20180601/brook"
