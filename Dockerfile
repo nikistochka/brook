@@ -7,7 +7,7 @@ RUN mkdir -p /newfolder
 WORKDIR /newfolder
 RUN cd /newfolder
 
-RUN wget -O brook "https://github.com/txthinking/brook/releases/download/v20180601/brook"
+RUN wget -O brook "https://github.com/txthinking/brook/releases/download/v20181212/brook"
 
 RUN chmod +x brook
 
