@@ -15,5 +15,5 @@ else
 	docker --version
 fi
 
-sudo docker run -d --name brook --restart unless-stopped -p $BROOK_PORT:$BROOK_PORT nikistochka/brook \
+sudo docker run -d --name brook --restart unless-stopped -p $BROOK_PORT:$BROOK_PORT/tcp -p $BROOK_PORT:$BROOK_PORT/udp nikistochka/brook \
 socks5 -l :$BROOK_PORT -i $IP --username $USERNAME --password $PASSWORD
