@@ -2,9 +2,7 @@
 IP=127.0.0.1
 USERNAME=YourMom
 PASSWORD=CantRememberPasswords
-
-UDPRANGE=9082:9082
-TCPRANGE=9082:9082
+BROOK_PORT=9082
 
 
 which docker &> /dev/null
@@ -17,5 +15,5 @@ else
 	docker --version
 fi
 
-sudo docker run -d --name brook --restart unless-stopped -p $TCPRANGE/tcp -p $UDPRANGE/udp nikistochka/brook \
-socks5 -l :9082 -i $IP --username $USERNAME --password $PASSWORD
+sudo docker run -d --name brook --restart unless-stopped -p $BROOK_PORT:$BROOK_PORT nikistochka/brook \
+socks5 -l :$BROOK_PORT -i $IP --username $USERNAME --password $PASSWORD
