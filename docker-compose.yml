@@ -1,0 +1,9 @@
+version: '2.1'
+
+services:
+  brook:
+    image: nikistochka/brook
+    restart: always
+    ports:
+      - ${PROXY_PORT}:${PROXY_PORT}
+    command: socks5 -l :${PROXY_PORT} -i ${IP_ADDRESS} --username ${USERNAME} --password ${USERPASSWORD}
